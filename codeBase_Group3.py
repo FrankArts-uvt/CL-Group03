@@ -434,7 +434,8 @@ class LM(object):
         return pow(2.0, avg_entropy)
     
 
-#The following code is used to initialize our best-performing language model:
+#The following code is used to initialize our best-performing language model
+# (Achieved an average perplexity score of ~190-200, while the baseline model achieved an average score of ~280)
 # First we initialize the train corpi needed:
 n = 5
 train_corpus_list = []
@@ -444,7 +445,7 @@ for i in range(n):
 print("Corpus list created..")
 
 # Then we create the language model:
-lambdas = [0.15, 0.50, 0.2, 0.1, 0.05]
+lambdas = [0.18, 0.55, 0.18, 0.05, 0.04]
 ngram_model = LM(n, lam=0.001, smooth = 'discount', lambdas = lambdas)
 print("Language Model created..")
 
